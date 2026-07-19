@@ -123,23 +123,62 @@ docker compose -f docker-compose-speckle.yml up -d
 
 MIT License
 
+---
 
 ## 🏗 Architecture
+
+``# 🚀 Self-Hosted Speckle Server Deployment
+
+<p align="center">
+
+<img src="https://img.shields.io/badge/Docker-Containerization-blue?logo=docker">
+<img src="https://img.shields.io/badge/Docker%20Compose-Orchestration-blue?logo=docker">
+<img src="https://img.shields.io/badge/Nginx-Reverse%20Proxy-green?logo=nginx">
+<img src="https://img.shields.io/badge/PostgreSQL-Database-blue?logo=postgresql">
+<img src="https://img.shields.io/badge/Redis-Cache-red?logo=redis">
+<img src="https://img.shields.io/badge/MinIO-Object%20Storage-orange">
+
+</p>
+
+
+## 📌 Overview
+
+A production-style self-hosted deployment of **Speckle Server** using Docker Compose.
+
+This project demonstrates DevOps practices by deploying a BIM collaboration platform with containerized services including PostgreSQL, Redis, MinIO Object Storage, and Nginx Reverse Proxy.
+
+
+---
+
+# 🏗 System Architecture
+
 
 ```mermaid
 graph TD
 
-A[User / Browser]
+A[Internet / Users]
+
 B[Nginx Reverse Proxy]
+
 C[Speckle Frontend]
+
 D[Speckle Server]
-E[PostgreSQL]
-F[Redis]
-G[MinIO Object Storage]
+
+E[(PostgreSQL Database)]
+
+F[(Redis Cache)]
+
+G[(MinIO Object Storage)]
+
 
 A --> B
+
 B --> C
+
 C --> D
+
 D --> E
+
 D --> F
+
 D --> G
