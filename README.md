@@ -122,3 +122,24 @@ docker compose -f docker-compose-speckle.yml up -d
 # 📄 License
 
 MIT License
+
+
+## 🏗 Architecture
+
+```mermaid
+graph TD
+
+A[User / Browser]
+B[Nginx Reverse Proxy]
+C[Speckle Frontend]
+D[Speckle Server]
+E[PostgreSQL]
+F[Redis]
+G[MinIO Object Storage]
+
+A --> B
+B --> C
+C --> D
+D --> E
+D --> F
+D --> G
